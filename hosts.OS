@@ -18,7 +18,7 @@ os_firewall_use_firewalld=true
 
 # uncomment the following to enable htpasswd authentication; defaults to DenyAllPasswordIdentityProvider
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
-openshift_master_htpasswd_file=/home/jkelly/mission/ansible/htpasswd
+openshift_master_htpasswd_file=/home/jkelly/mission/ansible/Mission-01/htpasswd
 
 openshift_docker_options="--log-driver json-file --log-opt max-size=1M --log-opt max-file=3"
 openshift_check_min_host_memory_gb=1.5
