@@ -46,13 +46,13 @@ VM Snapshots are awesome, but full deploy automation is better!
 You can log into the OpenShift console at: https://mm01.cavenet.ca:8443/ and can view the my-project (very original) with 3 applications deployed.
 
 ### Simple Openshift Block
-http://blog-myproject.app.cavenet.ca/ (or http://blog-myproject.app.cavenet.ca:9080/ for remote access)
+http://blog-myproject.app.cavenet.ca:9080
 
 ### GoGs Repository
-http://gogs-np.app.cavenet.ca/ (or http://gogs-np.app.cavenet.ca:9443/ for remote access)
+https://gogs-np.app.cavenet.ca:9443
 - demo/demo
 - Sourced from: https://github.com/OpenShiftDemos/gogs-openshift-docker
 
 ### Graphana
-http://graphana.app.cavenet.ca/ (or http://graphana.app.cavenet.ca:9443/ for remote access)
+https://graphana.app.cavenet.ca:9443
 - Sourced from: http://widerin.net/blog/official-grafana-docker-image-on-openshift/
