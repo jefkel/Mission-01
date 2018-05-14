@@ -1,0 +1,69 @@
+---
+- hosts: mm01.cavenet.ca,mnode01.cavenet.ca,mnode02.cavenet.ca,mnode03.cavenet.ca
+  become: yes
+
+  tasks:
+  - name: Patch OS
+    yum:
+      name: '*'
+      state: latest
+
+  - name: Add required
+    yum:
+      name: '{{ item }}'
+      state: installed
+    with_items:
+      - open-vm-tools
+      - chrony
+      - perl
+      - net-tools
+      - wget
+      - git
+      - bind-utils
+      - iptables-services
+      - bridge-utils
+      - bash-completion
+      - kexec-tools
+      - sos
+      - psacct
+      - docker-1.13*
+
+  - name: insert Time Source
+    lineinfile:
+      path: /etc/chrony.conf
+      insertafter: 'server 3\.centos\.pool\.ntp\.org iburst'
+      line: 'server central.cavenet.ca iburst'
+      state: present
+
+  - name: delete centos time sources
+    lineinfile:
+      path: /etc/chrony.conf
+      regexp: 'centos\.pool\.ntp\.org'
+      state: absent
+
+  - name: Restart chronyd
+    service:
+      name: chronyd
+      state: restarted
+      enabled: yes
+
+  - name: Add public key to provisioned accounts
+    authorized_key:
+      user: "{{ item }}"
+      state: present
+      key: "{{ lookup('file', '/home/jkelly/.ssh/id_djk_rsa.pub' ) }}"
+    with_items:
+      - root
+      - jkelly
+
+#  - name: Reboot Server
+#    shell: shutdown -r +1
+
+#  - name: Hold for Reboot
+#    wait_for_connection:
+#      timeout: 900
+#      delay: 120
+#      sleep: 5
+
+#  - debug: 
+#      msg: "back after Reboot."
