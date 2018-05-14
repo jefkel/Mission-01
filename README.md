@@ -25,12 +25,12 @@ Package and configuration customizations applied via ansible (Mission-01/EnvDepl
 ### OpenShift Deployment
 
 Use the Advanced Installation (Ansible) scripts and configuration steps with some key additions to the ansible host configuration:
-openshift_master_default_subdomain=app.cavenet.ca
-os_firewall_use_firewalld=true
+- openshift_master_default_subdomain=app.cavenet.ca
+- os_firewall_use_firewalld=true
 
 Very important to set the following to override the default minimum requirements!
-openshift_check_min_host_memory_gb=1.5
-openshift_check_min_host_disk_gb=15
+- openshift_check_min_host_memory_gb=1.5
+- openshift_check_min_host_disk_gb=15
 
 See the actual hosts.OS file for a full picture of the additional options, but the above were the main requirements.
 
@@ -50,9 +50,9 @@ http://blog-myproject.app.cavenet.ca/ (or http://blog-myproject.app.cavenet.ca:9
 
 ### GoGs Repository
 http://gogs-np.app.cavenet.ca/ (or http://gogs-np.app.cavenet.ca:9443/ for remote access)
-demo/demo
-Sourced from: https://github.com/OpenShiftDemos/gogs-openshift-docker
+- demo/demo
+- Sourced from: https://github.com/OpenShiftDemos/gogs-openshift-docker
 
 ### Graphana
 http://graphana.app.cavenet.ca/ (or http://graphana.app.cavenet.ca:9443/ for remote access)
-Sourced from: http://widerin.net/blog/official-grafana-docker-image-on-openshift/
+- Sourced from: http://widerin.net/blog/official-grafana-docker-image-on-openshift/
