@@ -4,7 +4,7 @@ Learning how to Deploy OpenShift Origin for the first time.
 
 ## Initial Deployment
 
-The deployment chosen for Today is a 3-node cluster hosted on a single ESXi host.
+The deployment chosen for today is a 3-node cluster hosted on a single ESXi host.
 
 ### VM Deploy and Configure
 
@@ -17,7 +17,7 @@ Split DNS (internal as well as external DNS)
 Static Leases for hosts via existing DHCP service
 
 Each VM built with Minimal CentOS image
- - root and jkelly (admin) accounts provisioned during install
+ - root and user (admin) accounts provisioned during install
  - mm01, mnode01, mnode02, mnode03 in the cavenet.ca domain for hostnames
 
 Package and configuration customizations applied via ansible (Mission-01/EnvDeploy/deployOS.yml)
@@ -37,9 +37,9 @@ See the actual hosts.OS file for a full picture of the additional options, but t
 ### TroubleShooting Fun
 Adding extra infrastructure node may seem like a fun idea, but it adds to the network complexity when configuring gateways, DNS, etc.
 
-Firewalls, port-forwarding, provider port blocking, and other networking fun when demoing from home.
+Firewalls, port-forwarding, provider port blocking, and other networking fun when hosting presentation material from home.
 
-VM Snapshots are awesome, but too many can become slower than re-running automated deployments.
+VM Snapshots are awesome, but full deploy automation is better!
 
 ## Application Deployments
 
