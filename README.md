@@ -51,6 +51,8 @@ http://blog-myproject.app.cavenet.ca/ (or http://blog-myproject.app.cavenet.ca:9
 ### GoGs Repository
 http://gogs-np.app.cavenet.ca/ (or http://gogs-np.app.cavenet.ca:9443/ for remote access)
 demo/demo
+Sourced from: https://github.com/OpenShiftDemos/gogs-openshift-docker
 
 ### Graphana
 http://graphana.app.cavenet.ca/ (or http://graphana.app.cavenet.ca:9443/ for remote access)
+Sourced from: http://widerin.net/blog/official-grafana-docker-image-on-openshift/
